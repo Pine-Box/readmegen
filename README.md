@@ -1,5 +1,5 @@
 
-# README Generator README Generator
+# README Generator
 
 ## Background
 
@@ -54,14 +54,14 @@ SO THAT I can quickly create a professional README for a new project
 
 ## Description
 
- blah blah
+ This application will generate a README file which can be used to add or replace in one of your projects.
 
 ## Installation
 
 To install necessary dependencies, run the following command:
 
 ```
-npm i npm i
+npm i
 ```
 
 ## Usage
@@ -81,7 +81,7 @@ nothing
 To run the test suite use:
 
 ```
-npm test  npm test
+npm test
 ```
 
 ## Questions

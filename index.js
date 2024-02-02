@@ -45,10 +45,10 @@ const promptUser = () =>
           message: 'What does the user need to know about contributing to the repo?'
         },
     ]);
-
+// description to be used in answering question in console - This application will generate a README file which can be used to add or replace in one of your projects.
 const generateHTML = (answers) =>
     `
-# README Generator ${answers.project}
+# ${answers.project}
 
 ## Background
 
@@ -110,7 +110,7 @@ SO THAT I can quickly create a professional README for a new project
 To install necessary dependencies, run the following command:
 
 \`\`\`
-npm i ${answers.dependencies}
+${answers.dependencies}
 \`\`\`
 
 ## Usage
@@ -130,7 +130,7 @@ ${answers.contributing}
 To run the test suite use:
 
 \`\`\`
-npm test  ${answers.tests}
+${answers.tests}
 \`\`\`
 
 ## Questions
