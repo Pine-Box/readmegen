@@ -1,7 +1,7 @@
 const fs = require("fs");
-const path = require('path');
+//const path = require('path');
 const inquirer = require("inquirer");
-const generateMarkdown = require("./utils/generateMarkdown");
+//const generateMarkdown = require("./utils/generateMarkdown");
 const util = require('util');
 const writeFileAsync = util.promisify(fs.writeFile);
 
@@ -45,8 +45,9 @@ const promptUser = () =>
           message: 'What does the user need to know about contributing to the repo?'
         },
     ]);
-// description to be used in answering question in console - This application will generate a README file which can be used to add or replace in one of your projects.
-const generateHTML = (answers) =>
+// description to be used in answering question in console -
+// This application will generate a README file which can be used to add or replace in one of your projects.
+const generateReadMe = (answers) =>
     `
 # ${answers.project}
 
@@ -79,10 +80,21 @@ SO THAT I can quickly create a professional README for a new project
         Questions
 
     When a user enters the project title, it's displayed as the title of the README.
-    When a user enters a description, installation instructions, usage information, contribution guidelines, and test instructions, this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests.
-    When a user chooses a license for their application from a list of options, a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under.
-    When a user enters their GitHub username, it's added to the section of the README entitled Questions, with a link to their GitHub profile.
-    When a user enters their email address, it's added to the section of the README entitled Questions, with instructions on how to reach them with additional questions.
+    
+    When a user enters a description, installation instructions, usage information, contribution guidelines,
+    and test instructions, this information is added to the sections of the README entitled Description, Installation, 
+    Usage, Contributing, and Tests.
+    
+    When a user chooses a license for their application from a list of options, a badge for that license 
+    is added near the top of the README and a notice is added to the section of the README entitled License 
+    that explains which license the application is covered under.
+    
+    When a user enters their GitHub username, it's added to the section of the README entitled Questions, 
+    with a link to their GitHub profile.
+    
+    When a user enters their email address, it's added to the section of the README entitled Questions, 
+    with instructions on how to reach them with additional questions.
+    
     When a user clicks on the links in the Table of Contents, they are taken to the corresponding section of the README.
 
 ## Table of Contents
@@ -133,12 +145,21 @@ To run the test suite use:
 ${answers.tests}
 \`\`\`
 
-## Questions
+## Questions 
+
+My github profile link:  https://github.com/${answers.githubname}
 
 Any questions or feedback please contact me at : ${answers.email}
     `;
 
+
+//main app entry
+
+//get user input
 promptUser()
-.then((answers) => writeFileAsync('README.md', generateHTML(answers)))
+//write out answers to file storage
+.then((answers) => writeFileAsync('README.md', generateReadMe(answers)))
+ //write out success
 .then(() => console.log('Successfully wrote to README.md'))
+ //write out error if not successful
 .catch((err) => console.error(err));
