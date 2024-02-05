@@ -148,6 +148,8 @@ ${answers.tests}
 My github profile link:  https://github.com/${answers.githubname}
 
 Any questions or feedback please contact me at : ${answers.email}
+    
+Demo Video : [Demo of application running and output](./assets/movie/readmegen_small.mov)    
     `;
 
 

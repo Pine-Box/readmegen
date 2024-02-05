@@ -101,5 +101,5 @@ My github profile link:  https://github.com/pine-box
 
 Any questions or feedback please contact me at : test@test.com
 
-Demo Video : [Demo of application running and output](./assets/movie/readmegen.mov)
+Demo Video : [Demo of application running and output](./assets/movie/readmegen_small.mov)
     
